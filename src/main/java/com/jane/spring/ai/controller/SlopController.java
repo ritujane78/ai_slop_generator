@@ -64,10 +64,10 @@ public class SlopController {
                 
                 Output format (strict):
                 Return exactly $ lines , in this exact order, each prefixed exactly as shown:
-                PIRATE: <TWEET> <BR/>
-                INSPIRATIONAL: <TWEET> <BR/>
-                TECH_BRO: <TWEET> <BR/>    
-                IMPOSTER: <TWEET> <BR/>
+                PIRATE: <TWEET>
+                INSPIRATIONAL: <TWEET> 
+                TECH_BRO: <TWEET>     
+                IMPOSTER: <TWEET> 
                 MONK: <TWEET>   
            
                 """;
@@ -91,8 +91,8 @@ public class SlopController {
 
         return chatClient.prompt()
                 .options(ChatOptions.builder()
-                        .temperature(0.99)
-                        .topP(0.95)
+                        .temperature(1.0)
+//                        .topP(0.95)
                         )
            .system(systemTemplate).user(userPrompt).call().entity(converter);
     }
